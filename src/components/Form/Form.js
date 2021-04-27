@@ -16,13 +16,11 @@ function Form() {
   const [formData, updateFormData] = useState(initialFormData);
 
   const handleChange = (e) => {
-    console.log(e.target);
     updateFormData({
       ...formData,
       // Trimming any whitespace
       [e.target.name]: e.target.value.trim(),
     });
-    console.log(formData);
   };
 
   const handleSubmit = (e) => {
