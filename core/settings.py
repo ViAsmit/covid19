@@ -135,8 +135,9 @@ django_heroku.settings(locals())
 
 STATIC_URL = '/static/'
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'build')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'build', 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'build', 'static')
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'build', 'static')]
+STATICFILES_DIRS = []
 
 # If you want to serve user uploaded files add these settings
 MEDIA_URL = '/media/'
