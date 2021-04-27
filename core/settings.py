@@ -137,7 +137,7 @@ STATIC_URL = '/static/'
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'build', 'static')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'build', 'static')]
-STATICFILES_DIRS = []
+# STATICFILES_DIRS = []
 
 # If you want to serve user uploaded files add these settings
 MEDIA_URL = '/media/'
