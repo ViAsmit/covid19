@@ -1,3 +1,10 @@
 from django.contrib import admin
+from . import models
 
-# Register your models here.
+
+@admin.register(models.Shop)
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ('name', 'phone', 'city', 'state', 'verified')
+
+
+# admin.site.register(models.Category)
