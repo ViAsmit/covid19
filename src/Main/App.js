@@ -2,6 +2,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import List from '../components/List/List' ;
 import Form from '../components/Form/Form';
+import Searchby from '../components/searchby/searchby'
 
 import {
   BrowserRouter as Router,
@@ -30,6 +31,9 @@ function App() {
                 <Link to="/List">List of verified Dealers/suppliers</Link>
               </li>
               <li>
+                <Link to="/ListSorted">List sorted by city/state</Link>
+              </li>
+              <li>
                 <Link to="/form">Provide Information</Link>
               </li>
             </ul>
@@ -41,6 +45,9 @@ function App() {
           
           <Route exact path="/List">
             <List />
+          </Route>
+          <Route exact path="/ListSorted">
+            <Searchby/>
           </Route>
           <Route exact path="/form">
             <Form />
