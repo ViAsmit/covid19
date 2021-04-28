@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Fragment } from "react";
 import axiosInstance from "../../axios";
+import "./List.css";
 function List() {
   const [data, setData] = useState({
     shops: [],
@@ -28,6 +29,8 @@ function List() {
               <th>Phone</th>
               <th>City</th>
               <th>State</th>
+              <th>Resources</th>
+              <th>Special Notes</th>
               <th />
             </tr>
           </thead>
@@ -38,6 +41,8 @@ function List() {
                 <td>{lead.phone}</td>
                 <td>{lead.city}</td>
                 <td>{lead.state}</td>
+                <td>{lead.resources}</td>
+                <td>{lead.special_remarks}</td>
               </tr>
             ))}
           </tbody>

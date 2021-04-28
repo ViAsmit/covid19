@@ -14,9 +14,14 @@ class Shop(models.Model):
     state = models.CharField(max_length=100)
     verified = models.BooleanField(default=False)
     published = models.DateTimeField(default=timezone.now)
+    resources = models.CharField(max_length=200, default="")
+    special_remarks = models.CharField(max_length=200, default="")
     objects = models.Manager()
 
     verifiedObjects = ShopObjects()
+
+    class Meta:
+        ordering = ('state',)
 
     def __str__(self):
         return self.name

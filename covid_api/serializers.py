@@ -6,4 +6,5 @@ from django.conf import settings
 class ShopSerializer(serializers.ModelSerializer):
     class Meta:
         model = Shop
-        fields = ('id', 'name', 'phone', 'city', 'state', 'verified',)
+        fields = ('id', 'name', 'phone', 'city', 'state',
+                  'resources', 'special_remarks', 'verified',)
