@@ -1,5 +1,7 @@
 :root {
-  background-color: #f1f4f8;
+  /* background-color: #f1f4f8; */
+  padding-left: 30px;
+  /* padding-right: 30px; */
 }
 .App {
   text-align: center;
