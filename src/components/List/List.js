@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import axiosInstance from "../../axios";
 function List() {
   const [data, setData] = useState({
@@ -8,29 +8,43 @@ function List() {
   useEffect(() => {
     axiosInstance.get().then((res) => {
       setData({
-        posts: res.data,
+        shops: res.data,
       });
       console.log("====================================");
-      console.log(res.data);
     });
   }, [setData]);
 
-  return (
-    <div>
-      <ol>
-        <li>Row 1</li>
-        <li>Row 2</li>
-        <li>Row 1</li>
-        <li>Row 2</li>
-        <li>Row 1</li>
-        <li>Row 2</li>
-        <li>Row 1</li>
-        <li>Row 2</li>
-        <li>Row 1</li>
-        <li>Row 2</li>
-      </ol>
-    </div>
-  );
+  console.log(data);
+
+  if (data)
+    return (
+      <Fragment>
+        <h2>Oxygen Supplying Shops</h2>
+        <br />
+        <table className="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>City</th>
+              <th>State</th>
+              <th />
+            </tr>
+          </thead>
+          <tbody>
+            {data.shops.map((lead) => (
+              <tr key={lead.id}>
+                <td>{lead.name}</td>
+                <td>{lead.phone}</td>
+                <td>{lead.city}</td>
+                <td>{lead.state}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </Fragment>
+    );
+  else return <div>dfff</div>;
 }
 
 export default List;
