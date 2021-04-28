@@ -9,7 +9,7 @@ from rest_framework.views import APIView
 
 class ShopList(generics.ListCreateAPIView):
     serializer_class = ShopSerializer
-    queryset = Shop.objects.all()
+    queryset = Shop.verifiedObjects.all()
 
 
 class ShopDetail(generics.RetrieveAPIView):
