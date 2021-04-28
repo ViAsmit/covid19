@@ -15,6 +15,7 @@ class Shop(models.Model):
     verified = models.BooleanField(default=False)
     published = models.DateTimeField(default=timezone.now)
     objects = models.Manager()
+
     verifiedObjects = ShopObjects()
 
     def __str__(self):
