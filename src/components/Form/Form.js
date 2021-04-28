@@ -26,6 +26,9 @@ function Form() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+    if(formData.name === "" || formData.name === null)formData.name = 'default';
+    if(formData.city === "" || formData.city === null)formData.city = 'default';
+    if(formData.state === "" || formData.state === null)formData.state = 'default';
     formData.phone.length === 10 ?
     (
       axiosInstance
@@ -34,6 +37,8 @@ function Form() {
         phone: formData.phone,
         city: formData.city,
         state: formData.state,
+        resources: "default",
+        special_remarks:'default'
       })
       .then((res) => {
         history.push("/list/");

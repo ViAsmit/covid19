@@ -37,12 +37,12 @@ function List() {
           <tbody>
             {data.shops.map((lead) => (
               <tr key={lead.id}>
-                <td>{lead.name}</td>
-                <td>{lead.phone}</td>
-                <td>{lead.city}</td>
-                <td>{lead.state}</td>
-                <td>{lead.resources}</td>
-                <td>{lead.special_remarks}</td>
+                <td>{"  "+lead.name}</td>
+                <td>{"  "+lead.phone}</td>
+                <td>{"  "+lead.city}</td>
+                <td>{"  "+lead.state}</td>
+                <td>{"  "+lead.resources}</td>
+                <td>{"  "+lead.special_remarks}</td>
               </tr>
             ))}
           </tbody>
