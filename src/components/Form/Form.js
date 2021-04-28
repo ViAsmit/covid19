@@ -26,7 +26,9 @@ function Form() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
-    axiosInstance
+    formData.phone.length === 10 ?
+    (
+      axiosInstance
       .post("", {
         name: formData.name,
         phone: formData.phone,
@@ -35,7 +37,8 @@ function Form() {
       })
       .then((res) => {
         history.push("/list/");
-      });
+      }))
+      : alert("Please enter number with 10 digits!")
   };
   return (
     <div>
@@ -45,7 +48,6 @@ function Form() {
           <label>
             <p>Your Name</p>
             <input
-              username="name"
               type="text"
               onChange={handleChange}
               name="username"
@@ -57,7 +59,6 @@ function Form() {
           <label>
             <p>Your number</p>
             <input
-              userNumber="name"
               type="number"
               onChange={handleChange}
               name="usernumber"
@@ -69,7 +70,6 @@ function Form() {
           <label>
             <p>Supplier/Dealer's Name</p>
             <input
-              supplier="name"
               type="text"
               onChange={handleChange}
               name="name"
@@ -81,7 +81,6 @@ function Form() {
           <label>
             <p>Supplier/Dealer's Number</p>
             <input
-              supplierNumber="name"
               type="number"
               onChange={handleChange}
               name="phone"
@@ -93,7 +92,6 @@ function Form() {
           <label>
             <p>City</p>
             <input
-              city="name"
               type="text"
               onChange={handleChange}
               name="city"
@@ -104,7 +102,6 @@ function Form() {
           <label>
             <p>State</p>
             <input
-              state="name"
               type="text"
               onChange={handleChange}
               name="state"
