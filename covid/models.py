@@ -9,7 +9,7 @@ class Shop(models.Model):
             return super().get_queryset().filter(status='verified')
 
     name = models.CharField(max_length=100)
-    phone = models.IntegerField()
+    phone = models.CharField(max_length=10)
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
     verified = models.BooleanField(default=False)
