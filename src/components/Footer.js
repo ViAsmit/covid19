@@ -21,7 +21,7 @@ function Footer() {
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://github.com/bp"
+            href="https://github.com/BharatPratap"
             style={{ color: "#59b7ff" }}
           >
             {" "}
