@@ -15,7 +15,7 @@ function App() {
         <h1>OxyGen</h1>
         <h3>
           Help those in need by giving information about medical equipments
-          <br></br> and resourses and contribute to humanity
+          <br></br> and resources and contribute to humanity
         </h3>
 
         <Router>
