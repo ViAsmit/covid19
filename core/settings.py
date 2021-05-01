@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import django_heroku
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -80,21 +82,34 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+print('================')
+print(os.environ.get('TYPE'))
+print('================')
 
-DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'daujc6q0tnsh4a',
-        'USER': 'stawklreviofsw',
-        'PASSWORD': '728fe60c06304bd10cbbd3655d2879f78a5c7d2c1df50b472f1ed45314b5da3c',
-        'HOST': 'ec2-3-212-75-25.compute-1.amazonaws.com',
-        'PORT': '5432',
+if os.environ.get('TYPE') == None:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    # DATABASES = {
+    #     'default': {
+    #         'ENGINE': 'django.db.backends.sqlite3',
+    #         'NAME': BASE_DIR / 'db.sqlite3',
+    #     }
+    # }
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': os.environ.get('NAMEDB'),
+            'USER': os.environ.get('USERDB'),
+            'PASSWORD': os.environ.get('PASSWORD'),
+            'HOST': os.environ.get('HOSTDB'),
+            'PORT': '5432',
+        }
+    }
 
 
 # Password validation
