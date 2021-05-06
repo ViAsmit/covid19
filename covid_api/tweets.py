@@ -8,6 +8,7 @@ from urllib.parse import quote
 
 
 def auth():
+    print('**')
     return os.environ.get('BEARER_TOKEN')
 
 
