@@ -10,6 +10,7 @@ django-cors-headers = "*"
 gunicorn = "*"
 django-heroku = "*"
 python-dotenv = "*"
+requests = "*"
 
 [dev-packages]
 
