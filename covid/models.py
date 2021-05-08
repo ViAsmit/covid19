@@ -17,8 +17,8 @@ class Shop(models.Model):
     resources = models.CharField(max_length=200, default="")
     special_remarks = models.CharField(max_length=200, default="")
     score = models.IntegerField(default=0)
+    verified_at = models.CharField(max_length=100, default="")
     objects = models.Manager()
-
     verifiedObjects = ShopObjects()
 
     class Meta:
